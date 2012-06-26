@@ -105,14 +105,19 @@ noremap <Leader>m :%s/r//g<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Set pathogen
+if MySys() == "unix" || MySys() == "mac"
+source ~/.vim/bundle/pathogen.vim/plugin/pathogen.vim
+else
+source $VIM\vimfiles\bundle\pathogen.vim\plugin\pathogen.vim
+endif
+call pathogen#infect()
+
 "Set Ctags.
 set tags=tags,../tags
 
 "Set Cscope.
 set cscopequickfix=s-,c-,d-,i-,t-,e-
-
-"Set pathogen
-call pathogen#infect()
 
 "Set TagList.
 let Tlist_Show_One_File=1
