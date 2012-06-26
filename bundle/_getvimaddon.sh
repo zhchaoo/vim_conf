@@ -23,3 +23,15 @@ git clone git://github.com/vim-scripts/Source-Explorer-srcexpl.vim.git
 #######################################
 mkdir -p cscope_maps/plugin
 wget http://cscope.sourceforge.net/cscope_maps.vim -O cscope_maps/plugin/cscope_maps.vim
+
+
+
+#######################################
+###     update git addon            ###
+#######################################
+if [[ $1 == 'update' ]]
+then
+	ls -l | awk '/^d/{print $NF}' | while read line;
+	do echo 'update addon '$line; cd $line; git pull; cd ..;
+	done
+fi
