@@ -100,7 +100,7 @@ endif
 " => MISC
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Remove the Windows ^M
-noremap <Leader>m :%s/r//g<CR>
+noremap <Leader>m :%s/\r//g<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configuration
