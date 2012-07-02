@@ -17,6 +17,7 @@ git clone git://github.com/vim-scripts/genutils.git
 git clone git://github.com/vim-scripts/javascript.vim.git
 git clone git://github.com/vim-scripts/a.vim.git
 git clone git://github.com/vim-scripts/Source-Explorer-srcexpl.vim.git
+git clone git://github.com/vim-scripts/EnhCommentify.vim.git
 
 #######################################
 ###     get addon by wget           ###

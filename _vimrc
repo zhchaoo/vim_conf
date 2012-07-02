@@ -79,8 +79,8 @@ set tabstop=4
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set Key Maps
 map <F4> :Tlist<CR>
-map <C-F5> :NERDTreeToggle<CR>
-map <C-F11> :wqa!<CR>
+map <S-F5> :NERDTreeToggle<CR>
+map <S-F11> :wqa!<CR>
 map <F11> :qa!<CR>
 map <F10> :cn<CR>
 map <S-F10> :cp<CR>
