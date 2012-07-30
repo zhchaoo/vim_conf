@@ -71,6 +71,7 @@ set nowb
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text option
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set expandtab
 set shiftwidth=4
 set tabstop=4
 
@@ -82,8 +83,8 @@ map <F4> :Tlist<CR>
 map <S-F5> :NERDTreeToggle<CR>
 map <S-F11> :wqa!<CR>
 map <F11> :qa!<CR>
-map <F10> :cn<CR>
-map <S-F10> :cp<CR>
+map <F7> :cn<CR>
+map <S-F7> :cp<CR>
 
 """"""""""""""""""""""""""""""
 " => VIM
