@@ -7,7 +7,7 @@ git clone git://github.com/vim-scripts/cocoa.vim.git
 git clone git://github.com/vim-scripts/taglist.vim.git
 git clone git://github.com/vim-scripts/c.vim.git
 git clone git://github.com/vim-scripts/The-NERD-tree.git
-git clone git://github.com/vim-scripts/lookupfile.git
+#git clone git://github.com/vim-scripts/lookupfile.git replaced by fuzzyfinder
 git clone git://github.com/vim-scripts/TagHighlight.git
 git clone git://github.com/vim-scripts/calendar.vim.git
 git clone git://github.com/vim-scripts/autoload_cscope.vim.git
@@ -18,6 +18,7 @@ git clone git://github.com/vim-scripts/javascript.vim.git
 git clone git://github.com/vim-scripts/a.vim.git
 git clone git://github.com/vim-scripts/Source-Explorer-srcexpl.vim.git
 git clone git://github.com/vim-scripts/EnhCommentify.vim.git
+git clone git://github.com/vim-scripts/L9.git
 git clone git://github.com/vim-scripts/FuzzyFinder.git
 
 #######################################

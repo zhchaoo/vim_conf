@@ -60,6 +60,16 @@ set so=7
 "Show line number
 set nu
 
+" special statusbar for special window
+if has("autocmd")
+au FileType qf
+\ if &buftype == "quickfix" |
+\ setlocal statusline=%2*%-3.3n%0* |
+\ setlocal statusline+=\ \[Compiler\ Messages\] |
+\ setlocal statusline+=%=%2*\ %<%P |
+\ endif
+au FileType qf wincmd L
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files and backup
@@ -79,12 +89,20 @@ set tabstop=4
 " => KeyMapping
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set Key Maps
-map <F4> :Tlist<CR>
-map <S-F5> :NERDTreeToggle<CR>
 map <S-F11> :wqa!<CR>
 map <F11> :qa!<CR>
 map <F7> :cn<CR>
 map <S-F7> :cp<CR>
+" TagList
+map <F4> :Tlist<CR>
+" NERDTreeToggle
+map <F5> :NERDTreeToggle<CR>
+" FuzzyFinder
+map <leader>ff :FufTaggedFile<CR>
+map <leader>fd :FufFile<CR>
+map <leader>fb :FufBuffer<CR>
+map <leader>ft :FufBufferTag<CR>
+map <leader>fa :FufTag<CR>
 
 """"""""""""""""""""""""""""""
 " => VIM
@@ -130,7 +148,9 @@ let tlist_objc_settings='objc;i:interface;c:class;m:method;p:property'
 let Tlist_Close_On_Select=1
 
 "Set MiniBuf.
-let g:miniBufExplorerMoreThanOne=0
+let g:miniBufExplorerMoreThanOne=1
+let g:miniBufExplMaxSize = 2
+let g:miniBufExplModSelTarget = 1
 
 "Set org-mode plugin
 "au! BufRead,BufWrite,BufWritePost,BufNewFile *.org 
