@@ -62,13 +62,9 @@ set nu
 
 " special statusbar for special window
 if has("autocmd")
-au FileType qf
-\ if &buftype == "quickfix" |
-\ setlocal statusline=%2*%-3.3n%0* |
-\ setlocal statusline+=\ \[Compiler\ Messages\] |
-\ setlocal statusline+=%=%2*\ %<%P |
-\ endif
-au FileType qf wincmd L
+au FileType qf 
+\ wincmd L |
+\ vertical-resize 150
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -93,6 +89,17 @@ map <S-F11> :wqa!<CR>
 map <F11> :qa!<CR>
 map <F7> :cn<CR>
 map <S-F7> :cp<CR>
+"Toggle Menu and Toolbar
+set guioptions-=m
+set guioptions-=T
+map <silent> <F2> :if &guioptions =~# 'T' <Bar>
+            \set guioptions-=T <Bar>
+            \set guioptions-=m <bar>
+            \else <Bar>
+            \set guioptions+=T <Bar>
+            \set guioptions+=m <Bar>
+            \endif<CR>
+
 " TagList
 map <F4> :Tlist<CR>
 " NERDTreeToggle
@@ -103,6 +110,9 @@ map <leader>fd :FufFile<CR>
 map <leader>fb :FufBuffer<CR>
 map <leader>ft :FufBufferTag<CR>
 map <leader>fa :FufTag<CR>
+" Cscope
+map <leader>cc :set cscopequickfix=s-,c-,d-,i-,t-,e-<CR>
+map <leader>ca :set cscopequickfix=s+,c+,d+,i+,t+,e+<CR>
 
 """"""""""""""""""""""""""""""
 " => VIM
