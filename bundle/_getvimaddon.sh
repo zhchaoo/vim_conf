@@ -12,7 +12,7 @@ git clone git://github.com/vim-scripts/TagHighlight.git
 git clone git://github.com/vim-scripts/calendar.vim.git
 git clone git://github.com/vim-scripts/autoload_cscope.vim.git
 git clone git://github.com/vim-scripts/SuperTab.git
-git clone git://github.com/vim-scripts/minibufexpl.vim.git
+#git clone git://github.com/vim-scripts/minibufexpl.vim.git
 git clone git://github.com/vim-scripts/genutils.git
 git clone git://github.com/vim-scripts/javascript.vim.git
 git clone git://github.com/vim-scripts/a.vim.git
@@ -20,6 +20,7 @@ git clone git://github.com/vim-scripts/Source-Explorer-srcexpl.vim.git
 git clone git://github.com/vim-scripts/EnhCommentify.vim.git
 git clone git://github.com/vim-scripts/L9.git
 git clone git://github.com/vim-scripts/FuzzyFinder.git
+git clone git://github.com/vim-scripts/python.vim.git
 
 #######################################
 ###     get addon by wget           ###
