@@ -1,5 +1,16 @@
 #!/bin/sh
 #######################################
+###     update git addon            ###
+#######################################
+if [[ $1 == 'update' ]]
+then
+	ls -l | awk '/^d/{print $NF}' | while read line;
+	do echo 'update addon '$line; cd $line; git pull; cd ..;
+	done
+    exit 0
+fi
+
+#######################################
 ###     get addon by git            ###
 #######################################
 git clone git://github.com/vim-scripts/pathogen.vim.git
@@ -28,14 +39,3 @@ git clone git://github.com/vim-scripts/python.vim.git
 mkdir -p cscope_maps/plugin
 wget http://cscope.sourceforge.net/cscope_maps.vim -O cscope_maps/plugin/cscope_maps.vim
 
-
-
-#######################################
-###     update git addon            ###
-#######################################
-if [[ $1 == 'update' ]]
-then
-	ls -l | awk '/^d/{print $NF}' | while read line;
-	do echo 'update addon '$line; cd $line; git pull; cd ..;
-	done
-fi
