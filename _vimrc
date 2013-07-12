@@ -39,7 +39,7 @@ syntax on
 set lines=45
 set columns=150
 " set guifont
-if MySys() == "unix" || MySys() == "mac"
+if MySys() == "mac"
 set guifont=Menlo:h14
 endif
 
