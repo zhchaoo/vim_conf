@@ -11,6 +11,24 @@ return "mac"
 endif
 endfunction
 
+function! QFixToggle(forced)
+    if exists("g:qfix_win") && a:forced != 0
+        cclose
+    else
+        if exists("g:my_quickfix_win_height")
+            execute "copen ".g:my_quickfix_win_height
+        else
+            copen
+        endif
+    endif
+endfunction
+
+augroup QFixToggle
+    autocmd!
+    autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
+    autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
+augroup END
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -64,7 +82,7 @@ set nu
 if has("autocmd")
 au FileType qf 
 \ wincmd L |
-\ vertical-resize 150
+"\ vertical-resize 150
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -102,6 +120,8 @@ map <silent> <F2> :if &guioptions =~# 'T' <Bar>
 
 " TagList
 map <F4> :Tlist<CR>
+" QuickFix
+map <S-F4> :call QFixToggle(1)<CR>
 " NERDTreeToggle
 map <F5> :NERDTreeToggle<CR>
 " FuzzyFinder
