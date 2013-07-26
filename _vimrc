@@ -1,5 +1,5 @@
 ﻿"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Functions
+" => Functions ------------------ {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! MySys()
 if has("win32")
@@ -28,9 +28,10 @@ augroup QFixToggle
     autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
     autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
 augroup END
+" }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
+" => General ------------------ {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Enable filetype plugin
 filetype on
@@ -43,9 +44,6 @@ set autoread
 "Set mapleader
 let mapleader = ","
 let g:mapleader = ","
- 
-"Fast saving
-nmap <leader>w :w!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Font
@@ -78,13 +76,6 @@ set so=7
 "Show line number
 set nu
 
-" special statusbar for special window
-if has("autocmd")
-au FileType qf 
-\ wincmd L |
-"\ vertical-resize 150
-endif
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files and backup
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,10 +89,33 @@ set nowb
 set expandtab
 set shiftwidth=4
 set tabstop=4
+" }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => KeyMapping
+" => Auto command ------------------ {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" special statusbar for special window
+if has("autocmd")
+
+autocmd FileType qf 
+\ wincmd L |
+"\ vertical-resize 150
+
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+endif
+"}}}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => KeyMapping ------------------ {{{
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Fast saving
+nmap <leader>w :w!<cr>
+"Remove the Windows ^M
+noremap <Leader>m :%s/\r//g<CR>
 " Set Key Maps
 map <S-F11> :wqa!<CR>
 map <F11> :qa!<CR>
@@ -137,22 +151,17 @@ map <leader>ca :set cscopequickfix=s+,c+,d+,i+,t+,e+<CR>
 """"""""""""""""""""""""""""""
 " => VIM
 """"""""""""""""""""""""""""""
-au BufRead,BufNew *.vim map <buffer> <leader><space> :w!<cr>:source %<cr>
+autocmd BufRead,BufNew *.vim map <buffer> <leader><space> :w!<cr>:source %<cr>
 " autoload _vimrc 
 if MySys() == "unix" || MySys() == "mac"
 autocmd! BufWritePost .vimrc source % 
 else
 autocmd! BufWritePost _vimrc source % 
 endif
+" }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => MISC
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Remove the Windows ^M
-noremap <Leader>m :%s/\r//g<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Plugin configuration
+" => Plugin configuration ------------------ {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Set pathogen
 if MySys() == "unix" || MySys() == "mac"
@@ -183,10 +192,10 @@ let g:miniBufExplMaxSize = 2
 let g:miniBufExplModSelTarget = 1
 
 "Set org-mode plugin
-"au! BufRead,BufWrite,BufWritePost,BufNewFile *.org 
-"au BufEnter *.org call org#SetOrgFileType()
+"autocmd! BufRead,BufWrite,BufWritePost,BufNewFile *.org 
+"autocmd BufEnter *.org call org#SetOrgFileType()
 "let g:org_command_for_emacsclient='e:/emacs-23.4/bin/runemacs'
 
 "Set Objective-C format
 let filetype_m='objc'
-
+" }}}
