@@ -89,6 +89,7 @@ set nowb
 set expandtab
 set shiftwidth=4
 set tabstop=4
+set incsearch
 " }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -98,8 +99,8 @@ set tabstop=4
 if has("autocmd")
 
 autocmd FileType qf 
-\ wincmd L |
-"\ vertical-resize 150
+\ wincmd L
+"\ | vertical-resize 150
 
 augroup filetype_vim
     autocmd!
@@ -115,7 +116,9 @@ endif
 "Fast saving
 nmap <leader>w :w!<cr>
 "Remove the Windows ^M
-noremap <Leader>m :%s/\r//g<CR>
+noremap <leader>m :%s/\r//g<CR>
+"Append ';' symbol to the end of line
+nmap <leader>:execute "normal! mqA;\<esc>`q"
 " Set Key Maps
 map <S-F11> :wqa!<CR>
 map <F11> :qa!<CR>
@@ -147,6 +150,8 @@ map <leader>fa :FufTag<CR>
 " Cscope
 map <leader>cc :set cscopequickfix=s-,c-,d-,i-,t-,e-<CR>
 map <leader>ca :set cscopequickfix=s+,c+,d+,i+,t+,e+<CR>
+" sdcv
+nnoremap <leader>s :!sdcv '<cword>'<cr>
 
 """"""""""""""""""""""""""""""
 " => VIM
