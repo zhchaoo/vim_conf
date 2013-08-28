@@ -4,12 +4,13 @@
 
 
 " Grep
-"nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
+nnoremap <leader>gg :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
+nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
+vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
 
-nnoremap <leader>g :set operatorfunc=GrepOperator<cr>g@
-vnoremap <leader>g :<c-u>call GrepOperator(visualmode())<cr>
+function! s:GrepOperator(type)
+    let saved_unnamed_register = @@
 
-function! GrepOperator(type)
     if a:type ==# 'v'
         execute "normal! `<v`>y"
     elseif a:type ==# 'char'
@@ -19,6 +20,9 @@ function! GrepOperator(type)
     endif
 
     echom shellescape(@@)
+
     silent execute "grep! -R " . shellescape(@@) . " ."
     copen
+
+    let @@ = saved_unnamed_register
 endfunction
