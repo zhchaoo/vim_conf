@@ -32,7 +32,7 @@ git clone git://github.com/vim-scripts/EnhCommentify.vim.git
 git clone git://github.com/vim-scripts/L9.git
 git clone git://github.com/vim-scripts/FuzzyFinder.git
 git clone git://github.com/vim-scripts/python.vim.git
-git clone https://github.com/zhchaoo/myvimplugin.git
+git clone https://github.com/vim-scripts/ack.vim.git
 
 #######################################
 ###     get addon by wget           ###

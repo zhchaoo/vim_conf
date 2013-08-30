@@ -4,7 +4,7 @@
 
 
 " Grep
-nnoremap <leader>gg :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
+nnoremap <leader>gg :silent execute "Ack " . shellescape(expand("<cword>"))<cr>:copen<cr>
 nnoremap <leader>g :set operatorfunc=<SID>GrepOperator<cr>g@
 vnoremap <leader>g :<c-u>call <SID>GrepOperator(visualmode())<cr>
 
@@ -21,7 +21,7 @@ function! s:GrepOperator(type)
 
     echom shellescape(@@)
 
-    silent execute "grep! -R " . shellescape(@@) . " ."
+    silent execute "Ack " . shellescape(@@)
     copen
 
     let @@ = saved_unnamed_register
