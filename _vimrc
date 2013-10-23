@@ -114,20 +114,20 @@ endif
 " => KeyMapping ------------------ {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Fast saving
-nmap <leader>w :w!<cr>
+noremap <leader>w :w!<cr>
 "Remove the Windows ^M
 noremap <leader>m :%s/\r//g<CR>
 "Append ';' symbol to the end of line
-nmap <leader>:execute "normal! mqA;\<esc>`q"
+noremap <leader>:execute "normal! mqA;\<esc>`q"
 " Set Key Maps
-map <S-F11> :wqa!<CR>
-map <F11> :qa!<CR>
-map <F7> :cn<CR>
-map <S-F7> :cp<CR>
+noremap <leader>q :qa!<CR>
+noremap <leader>Q :wqa!<CR>
+noremap <leader>n :cn<CR>
+noremap <leader>N :cp<CR>
 "Toggle Menu and Toolbar
 set guioptions-=m
 set guioptions-=T
-map <silent> <F2> :if &guioptions =~# 'T' <Bar>
+noremap <silent> <leader>M :if &guioptions =~# 'T' <Bar>
             \set guioptions-=T <Bar>
             \set guioptions-=m <bar>
             \else <Bar>
@@ -136,22 +136,24 @@ map <silent> <F2> :if &guioptions =~# 'T' <Bar>
             \endif<CR>
 
 " TagList
-map <F4> :Tlist<CR>
+noremap <leader>e :Tlist<CR>
 " QuickFix
-map <S-F4> :call QFixToggle(1)<CR>
+noremap <leader>r :call QFixToggle(1)<CR>
 " NERDTreeToggle
-map <F5> :NERDTreeToggle<CR>
+noremap <leader>t :NERDTreeToggle<CR>
 " FuzzyFinder
-map <leader>ff :FufTaggedFile<CR>
-map <leader>fd :FufFile<CR>
-map <leader>fb :FufBuffer<CR>
-map <leader>ft :FufBufferTag<CR>
-map <leader>fa :FufTag<CR>
+noremap <leader>ff :FufTaggedFile<CR>
+noremap <leader>fd :FufFile<CR>
+noremap <leader>fb :FufBuffer<CR>
+noremap <leader>ft :FufBufferTag<CR>
+noremap <leader>fa :FufTag<CR>
 " Cscope
-map <leader>cc :set cscopequickfix=s-,c-,d-,i-,t-,e-<CR>
-map <leader>ca :set cscopequickfix=s+,c+,d+,i+,t+,e+<CR>
+noremap <leader>cc :set cscopequickfix=s-,c-,d-,i-,t-,e-<CR>
+noremap <leader>ca :set cscopequickfix=s+,c+,d+,i+,t+,e+<CR>
 " sdcv
-nnoremap <leader>s :!sdcv '<cword>'<cr>
+nnoremap <leader>s :!sdcv '<cword>'<CR>
+" 2html
+nnoremap <leader>h :runtime! syntax/2html.vim<CR>
 
 """"""""""""""""""""""""""""""
 " => VIM
