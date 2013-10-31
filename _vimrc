@@ -120,7 +120,7 @@ noremap <leader>w :w!<cr>
 "Remove the Windows ^M
 noremap <leader>m :%s/\r//g<CR>
 "Append ';' symbol to the end of line
-noremap <leader>:execute "normal! mqA;\<esc>`q"
+noremap <leader>; :execute "normal! mqA;"<CR>:execute "normal! `q"<CR>
 " Set Key Maps
 noremap <leader>q :qa!<CR>
 noremap <leader>Q :wqa!<CR>
