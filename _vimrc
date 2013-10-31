@@ -2,13 +2,15 @@
 " => Functions ------------------ {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! MySys()
-if has("win32")
-return "win32"
-elseif has("unix")
-return "unix"
-else
-return "mac"
-endif
+    if has("win32")
+        return "win32"
+    elseif has("mac")
+        return "mac"
+    elseif has("unix")
+        return "unix"
+    else
+        return "other"
+    endif
 endfunction
 
 function! QFixToggle(forced)
