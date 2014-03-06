@@ -1,5 +1,5 @@
 ﻿"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Functions ------------------ {{{
+" => Functions & init ------------------ {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! MySys()
     if has("win32")
@@ -30,6 +30,14 @@ augroup QFixToggle
     autocmd BufWinEnter quickfix let g:qfix_win = bufnr("$")
     autocmd BufWinLeave * if exists("g:qfix_win") && expand("<abuf>") == g:qfix_win | unlet! g:qfix_win | endif
 augroup END
+
+"Set pathogen
+if MySys() == "unix" || MySys() == "mac"
+source ~/.vim/bundle/pathogen.vim/plugin/pathogen.vim
+else
+source $VIM\vimfiles\bundle\pathogen.vim\plugin\pathogen.vim
+endif
+call pathogen#infect()
 " }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -50,7 +58,7 @@ let g:mapleader = ","
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Font
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme desert 
+colorscheme chow
 "Enable syntax hl
 syntax enable
 syntax on
@@ -172,14 +180,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configuration ------------------ {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Set pathogen
-if MySys() == "unix" || MySys() == "mac"
-source ~/.vim/bundle/pathogen.vim/plugin/pathogen.vim
-else
-source $VIM\vimfiles\bundle\pathogen.vim\plugin\pathogen.vim
-endif
-call pathogen#infect()
-
 "Set Ctags.
 set tags=tags,../tags
 
