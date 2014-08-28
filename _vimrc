@@ -58,7 +58,7 @@ let g:mapleader = ","
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Font
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme chow
+colorscheme monocai
 "Enable syntax hl
 syntax enable
 syntax on
@@ -91,9 +91,9 @@ if has("gui_running")
     "au GUIEnter * simalt ~x " maxmium the window
 "    set guioptions-=m       " hide the menu bar
 "    set guioptions-=t       " hide the tool bar
-    set guioptions-=l       " hide left scrollbar
+    set guioptions-=L       " hide left scrollbar
     set guioptions-=r       " hide right scrollbar
-    set guioptions-=b       " hide bottom scrollbar
+    set guioptions-=B       " hide bottom scrollbar
 "    set showtabline=0       " hide tab bar
 endif
 

@@ -35,6 +35,12 @@ git clone git://github.com/vim-scripts/python.vim.git
 git clone https://github.com/vim-scripts/ack.vim.git
 
 #######################################
+###     get colors by git           ###
+#######################################
+git clone https://github.com/sickill/vim-monokai.git
+git clone https://github.com/vim-scripts/Colour-Sampler-Pack.git
+
+#######################################
 ###     get addon by wget           ###
 #######################################
 mkdir -p cscope_maps/plugin
