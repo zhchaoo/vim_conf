@@ -33,9 +33,9 @@ augroup END
 
 "Set pathogen
 if MySys() == "unix" || MySys() == "mac"
-source ~/.vim/bundle/pathogen.vim/plugin/pathogen.vim
+source ~/.vim/bundle/pathogen.vim/autoload/pathogen.vim
 else
-source $VIM\vimfiles\bundle\pathogen.vim\plugin\pathogen.vim
+source $VIM\vimfiles\bundle\pathogen.vim\autoload\pathogen.vim
 endif
 call pathogen#infect()
 " }}}
