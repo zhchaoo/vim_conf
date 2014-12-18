@@ -33,6 +33,7 @@ git clone git://github.com/vim-scripts/L9.git
 git clone git://github.com/vim-scripts/FuzzyFinder.git
 git clone git://github.com/vim-scripts/python.vim.git
 git clone https://github.com/vim-scripts/ack.vim.git
+git clone https://github.com/kien/ctrlp.vim.git
 
 #######################################
 ###     get colors by git           ###
