@@ -14,9 +14,7 @@ fi
 ###     get addon by git            ###
 #######################################
 git clone git://github.com/vim-scripts/pathogen.vim.git
-git clone git://github.com/vim-scripts/cocoa.vim.git
 git clone git://github.com/vim-scripts/taglist.vim.git
-git clone git://github.com/vim-scripts/c.vim.git
 git clone git://github.com/vim-scripts/The-NERD-tree.git
 #git clone git://github.com/vim-scripts/lookupfile.git replaced by fuzzyfinder
 git clone git://github.com/vim-scripts/TagHighlight.git
@@ -34,6 +32,12 @@ git clone git://github.com/vim-scripts/FuzzyFinder.git
 git clone git://github.com/vim-scripts/python.vim.git
 git clone https://github.com/vim-scripts/ack.vim.git
 git clone https://github.com/kien/ctrlp.vim.git
+#######################################
+###     get language by git            ###
+#######################################
+git clone git://github.com/vim-scripts/c.vim.git
+git clone git://github.com/vim-scripts/cocoa.vim.git
+git clone https://github.com/fatih/vim-go.git
 
 #######################################
 ###     get colors by git           ###
