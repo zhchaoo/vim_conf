@@ -35,7 +35,7 @@ augroup END
 if MySys() == "unix" || MySys() == "mac"
 source ~/.vim/bundle/pathogen.vim/autoload/pathogen.vim
 else
-source $VIM\vimfiles\bundle\pathogen.vim\autoload\pathogen.vim
+source $VIM\vim_conf\bundle\pathogen.vim\autoload\pathogen.vim
 endif
 call pathogen#infect()
 " }}}
