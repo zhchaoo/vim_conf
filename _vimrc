@@ -218,7 +218,7 @@ let g:miniBufExplModSelTarget = 1
 
 "Set Objective-C format
 let filetype_m='objc'
-" }}}
 
 "Set go-vim plugin
 let g:go_fmt_autosave = 0
+" }}}
