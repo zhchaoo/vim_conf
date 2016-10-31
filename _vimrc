@@ -58,7 +58,7 @@ let g:mapleader = ","
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Font
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme monocai
+colorscheme monocai-ag
 "Enable syntax hl
 syntax enable
 syntax on
