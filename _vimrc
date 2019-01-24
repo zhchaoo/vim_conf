@@ -47,6 +47,9 @@ call pathogen#infect()
 filetype on
 filetype plugin on
 filetype indent on
+
+set visualbell
+set noerrorbells
  
 "Set to auto read when a file is changed from the outside
 set autoread
@@ -175,6 +178,8 @@ noremap <leader>ca :set cscopequickfix=s+,c+,d+,i+,t+,e+<CR>
 nnoremap <leader>s :!sdcv '<cword>'<CR>
 " 2html
 nnoremap <leader>h :runtime! syntax/2html.vim<CR>
+" json pretty
+nnoremap <leader>j :execute '%!python -m json.tool'<cr>
 
 """"""""""""""""""""""""""""""
 " => VIM
